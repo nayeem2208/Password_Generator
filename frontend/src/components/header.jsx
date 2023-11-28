@@ -2,18 +2,19 @@ import React, { useEffect } from "react";
 import applogo from "../assets/app-store.png";
 import { useAuth } from "../userContext";
 import { useNavigate } from "react-router-dom";
+import './home.css'
 function Header() {
-  const {user,setUser}=useAuth()
-  const navigate=useNavigate()
-  useEffect(()=>{
-    if(!user){
-      navigate('/login')
+  const { user, setUser } = useAuth();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
     }
-  },[user])
-  const logoutHandler=()=>{
-    localStorage.removeItem('PsUser')
-    setUser(null)
-  }
+  }, [user]);
+  const logoutHandler = () => {
+    localStorage.removeItem("PsUser");
+    setUser(null);
+  };
   return (
     <div
       className="w-full h-16 p-4 flex justify-between"
@@ -24,12 +25,16 @@ function Header() {
     >
       <div className="flex">
         <img src={applogo} alt="" className="w-8 h-8 ml-6 " />
-        <h1 className="font-bold text-gray-600  text-xl">
+        <h1 className="font-bold text-gray-600  text-2xl">
           {" "}
-          Password Generator
+          Enigma
         </h1>
       </div>
-      <button className="mr-12 font-bold text-white" onClick={logoutHandler}>Logout</button>
+      {user?<button className="btn  font-bold"  onClick={logoutHandler}> Logout</button>:''}
+      
+      {/* <button className="mr-12 font-bold text-white" onClick={logoutHandler}>
+        Logout
+      </button> */}
     </div>
   );
 }

@@ -1,20 +1,21 @@
 import { useState } from "react";
 import Routers from "./Routes";
 import Header from "./components/header";
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <div
       className="h-full min-h-screen "
-      // style={{
-      //   backgroundImage:
-      //     'url("https://media.giphy.com/media/7AtHoQ9XWbpwLRxs0t/giphy.gif")',
-      //   backgroundSize: "cover",
-      //   backgroundRepeat: "no-repeat",
-      // }}
+         style={{
+        background:
+          "linear-gradient(90deg,rgba(255,255,255,1) 0%, rgba(72,196,237,1) 67%)",
+      }}
     >
       <Header />
       <Routers />
+      <ToastContainer />
     </div>
   );
 }

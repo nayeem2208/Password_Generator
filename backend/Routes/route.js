@@ -1,9 +1,12 @@
 import express  from "express";
-import { check, login, register } from "../Controllers/controller.js";
+import { addPassword, check, deletePassword, getPasswords, login, register } from "../Controllers/controller.js";
 const router=express.Router()
 
 router.post('/register',register)
 router.post('/login',login)
-router.get('/check',check)
+router.get('/getPasswords',getPasswords)
+router.put('/addPassword',addPassword)
+router.delete('/deletePassword',deletePassword)
+// router.get('/check',check)
 
 export default router

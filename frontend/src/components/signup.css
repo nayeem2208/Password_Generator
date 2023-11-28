@@ -1,5 +1,6 @@
 .signup-container {
     position: relative;
+    
   }
   
   .lottie-animation {
@@ -8,7 +9,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 2;
   }
   
   .flex {
@@ -37,6 +38,7 @@
     border: 5px solid rgb(255, 255, 255);
     box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
     margin: 20px;
+    z-index: 3;
 }
   
   .heading {
